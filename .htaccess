@@ -1,0 +1,9 @@
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options nosniff
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy no-referrer-when-downgrade
+    Header always set Strict-Transport-Security "max-age=31536000;
+    <FilesMatch "\.(pl|php|cgi|spl|scgi|fcgi)$">
+        Header unset Expires
+    </FilesMatch>
+</IfModule>
